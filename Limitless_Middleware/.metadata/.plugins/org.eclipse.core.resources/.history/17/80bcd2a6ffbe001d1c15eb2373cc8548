@@ -1,0 +1,50 @@
+package com.example.demo.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entities.Builder_firm_reg;
+import com.example.demo.entities.BuildingDetails;
+import com.example.demo.entities.ProjectDetails;
+import com.example.demo.entities.Projects;
+import com.example.demo.repositories.Builder_firm_regRepository;
+import com.example.demo.repositories.BuildingDetailsRepository;
+import com.example.demo.repositories.ProjectsRepository;
+
+@Service
+public class BuildingDetailsService {
+	
+	@Autowired
+	BuildingDetailsRepository bdrepo ;
+	
+	public List<BuildingDetails> getAll()
+	{
+		return bdrepo.findAll();
+	
+	}
+	
+	public BuildingDetails save(BuildingDetails p)
+	{
+		return bdrepo.save(p);	
+	}
+	
+	public BuildingDetails getbuilding_id(int building_id)
+	{
+		return bdrepo.findById(building_id).get();
+	}
+
+	public List<BuildingDetails> getProjectDetails(ProjectDetails v)
+	{
+		return bdrepo.getProjectDetails(v);
+	}
+
+	public ProjectDetails getById(int project_details_id) 
+	{
+		
+		return null;
+	}
+	
+
+}

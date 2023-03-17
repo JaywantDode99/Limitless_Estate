@@ -1,0 +1,20 @@
+package com.example.demo.entities;
+
+
+public class SiteVisitDummy 
+{
+	int customer_login_id;
+	int executive_login_id;
+	
+	Boolean requeststatus;
+	
+	String customer_feedback;
+	
+	String executive_feedback;
+	
+	int project_id;
+
+	Boolean visitedstatus;
+	
+
+}

@@ -1,0 +1,20 @@
+package com.example.demo.entities;
+
+import java.util.Date;
+
+public class ProjectDetailsDummy {
+	int builder_id;
+	String project_name;
+	String contact_no;
+	int rera_no;
+	int total_buildings;
+	int total_flats;
+	Date start_date;
+	Date end_date;
+    String house_no ;
+	String building_name;
+	String area ;
+	String city ;	
+	int pincode;
+	
+}

@@ -1,0 +1,20 @@
+package com.example.demo.entities;
+
+public class AreaResponse {
+
+	private int addressId;
+	private String area;
+	public int getAddressId() {
+		return addressId;
+	}
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
+	}
+	public String getArea() {
+		return area;
+	}
+	public void setArea(String area) {
+		this.area = area;
+	}
+	
+}

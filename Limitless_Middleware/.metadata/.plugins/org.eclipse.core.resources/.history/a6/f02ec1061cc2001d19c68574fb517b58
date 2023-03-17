@@ -1,0 +1,32 @@
+package com.example.demo.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.demo.entities.Site_visit;
+import com.example.demo.entities.User_details;
+
+@Transactional
+@Repository
+public interface Site_visitRepository extends JpaRepository<Site_visit, Integer> 
+{
+
+	
+	public List<Site_visit> getSiteVisitRequestByStatus(int id);
+	
+
+	public int updateSiteVisitRequestByStatus(int id);
+	
+	
+
+	
+
+
+}
+
+
+

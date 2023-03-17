@@ -1,0 +1,13 @@
+package com.example.demo.entities;
+
+
+
+public class ProjectDetailsDummy {
+	
+	String building_name;
+	int total_flats;
+	int type_id;
+	int project_id;
+	
+	
+}

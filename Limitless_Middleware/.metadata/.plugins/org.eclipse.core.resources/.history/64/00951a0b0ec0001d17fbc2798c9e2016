@@ -1,0 +1,65 @@
+package com.example.demo.controllers;
+
+import java.util.List;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entities.Builder_firm_reg;
+import com.example.demo.entities.Builder_firm_regDummy;
+import com.example.demo.entities.Favourite;
+import com.example.demo.entities.Favouritedummy;
+import com.example.demo.entities.Projects;
+import com.example.demo.entities.User_details;
+import com.example.demo.services.FavouriteService;
+import com.example.demo.services.ProjectsService;
+import com.example.demo.services.User_detailsService;
+
+@CrossOrigin (origins = "http://localhost:3000")
+@RestController
+public class FavouriteController {
+	
+	@Autowired
+	FavouriteService favouriteservice ;
+	
+	@Autowired
+	User_detailsService userservice ;
+	
+	@Autowired
+	ProjectsService pservice;
+	
+	@GetMapping("/allFavourite")
+	public List<Favourite> getAll()
+	{
+		return favouriteservice.getAll();
+	}
+	
+	@PostMapping("/addtofavourite")
+	public Favourite addtofavourite(@RequestBody Favouritedummy a)
+	{
+		favouriteservice.findByProjectId(a.getProject_id());
+		
+		User_details lid=userservice.getById(a.getLogin_id());
+		
+		Projects pid=pservice.getProject_id(a.getProject_id());
+		Favourite f=new Favourite(lid,pid);
+		
+		return favouriteservice.save(f);		
+	}
+	
+	@GetMapping("/getProjectByLoginId")
+	public List<Favourite> getDetailsById(@RequestParam("login_id") User_details login_id)
+	{
+		System.out.println("Login id :- "+login_id);
+		
+		return favouriteservice.getDetailsById(login_id);
+	}
+	
+	
+}

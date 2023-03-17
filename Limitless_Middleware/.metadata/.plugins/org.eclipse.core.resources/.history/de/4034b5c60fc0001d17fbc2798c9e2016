@@ -1,0 +1,10 @@
+package com.example.demo.entities;
+
+public class FavResponse {
+
+	private String status;
+	private String message;
+	private int errorCode;
+	
+	
+}

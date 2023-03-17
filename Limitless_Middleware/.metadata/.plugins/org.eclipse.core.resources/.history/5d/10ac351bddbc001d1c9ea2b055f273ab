@@ -1,0 +1,20 @@
+package com.example.demo.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entities.Projects;
+@Repository
+public interface ProjectsRepository extends JpaRepository<Projects, Integer> {
+	
+	@Query("select c from Project c where projects_id= :stateid")
+	public List<Projects> getAll(Projects stateid);
+	
+
+}
+
+
+

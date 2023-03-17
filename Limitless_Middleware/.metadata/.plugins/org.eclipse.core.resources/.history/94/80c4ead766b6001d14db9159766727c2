@@ -1,0 +1,51 @@
+package com.example.demo.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table (name = "user_details")
+public class User_details 
+{
+	@Id 
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	int login_id;
+	
+	@Column
+	String first_name;
+	
+	@Column
+	String last_name;
+	
+	@Column
+	String mobile_no;
+	
+	@Column
+	String email_id;
+	
+	@Column
+	String password;
+	
+	@ManyToOne 
+	@JoinColumn (name ="role_id")
+	Role role_id;
+	
+	@Column
+	Address address_id;
+	
+	@Column
+	Boolean status;
+	
+	@Column
+	Source source_id;
+	
+	@Column
+	Forget_password_que forgot_pwd_que_id;
+	
+	@Column
+	String answer;
+	
+	
+	
+	
+
+}

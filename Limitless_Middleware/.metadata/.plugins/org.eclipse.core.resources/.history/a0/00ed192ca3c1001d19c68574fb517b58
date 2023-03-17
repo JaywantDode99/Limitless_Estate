@@ -1,0 +1,50 @@
+package com.example.demo.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import javax.persistence.Id;
+
+@Entity
+@Table (name = "site_visits")
+public class Site_visit 
+{
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	int site_visit_id;
+	
+	@ManyToOne
+	@JoinColumn(name="login_id")
+	int customer_login_id;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="login_id")
+	int executive_login_id;
+	
+	@Column
+	Boolean requeststatus;
+	
+	@Column
+	String customer_feedback;
+	
+	@Column
+	String executive_feedback;
+	
+	@Column
+	Boolean visitedstatus;
+	
+	@ManyToOne
+	@JoinColumn(name="project_id")
+	Projects project_id;
+	
+
+	
+	
+}
